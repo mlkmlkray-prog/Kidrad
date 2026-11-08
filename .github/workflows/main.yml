@@ -2,28 +2,34 @@
 name: Build KidGuard APK
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         run: npm install
 
       - name: Install EAS CLI
         run: npm install -g eas-cli
+
+      - name: Configure Expo project
+        run: eas init --force --account khkhkrads-team --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
       - name: Build Android APK
         run: eas build --platform android --profile preview --non-interactive
