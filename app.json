@@ -33,6 +33,12 @@
           "isAccessMediaLocationEnabled": true
         }
       ]
-    ]
+      ],
+  "extra": {
+    "eas": {
+      "projectId": "dd6a72ea-9d89-4399-8d3e-8f3f05d71d83"
+    }
+  }
+}
   }
 }
