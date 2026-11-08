@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "KidGuard",
+    "slug": "kidguard",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.kidguard.app",
+      "versionCode": 1,
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "READ_MEDIA_IMAGES",
+        "READ_EXTERNAL_STORAGE",
+        "FOREGROUND_SERVICE",
+        "RECEIVE_BOOT_COMPLETED"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "يحتاج KidGuard للموقع لمراقبة موقع طفلك."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "يحتاج KidGuard للوصول للصور.",
+          "savePhotosPermission": "يحتاج KidGuard لحفظ الصور.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ]
+  }
+}
